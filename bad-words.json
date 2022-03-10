@@ -1,0 +1,37 @@
+{
+  "words" : [  {
+    "replace" : "💩💩💩💩💩",
+    "word" : "bolsonaro"
+  }, {
+    "replace" : "👎🏼👎🏼👎🏼👎🏼",
+    "word" : "puta"
+  },
+  {
+    "replace" : "👎🏼👎🏼👎🏼👎🏼",
+    "word" : "viado"
+  },
+  {
+    "replace" : "👎🏼👎🏼👎🏼👎🏼",
+    "word" : "corno"
+  },
+  {
+    "replace" : "👎🏼👎🏼👎🏼👎🏼",
+    "word" : "vagabunda"
+  },
+  {
+    "replace" : "👎🏼👎🏼👎🏼👎🏼",
+    "word" : "puto"
+  },
+  {
+    "replace" : "🏳️‍⚧️Evelyn🏳️‍⚧️",
+    "word" : "evelyn"
+  },
+  {
+    "replace" : "Firebase🔥",
+    "word" : "firebase"
+  },
+  {
+    "replace" : "<div class=\"d-inline-flex align-items-baseline align-self-baseline flex-nowrap\">  <img width=\"20\" src=\"https://firebasestorage.googleapis.com/v0/b/tests-evlymn-dev.appspot.com/o/firebase-icon.svg?alt=media&token=c8ac90dd-9e4c-4503-ad50-e6f1389e0cdd\">Firebase</div>",
+    "word" : "#firebase"
+  }]
+}

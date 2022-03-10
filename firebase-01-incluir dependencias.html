@@ -1,0 +1,27 @@
+<script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js';
+    import { getAnalytics, logEvent, setUserProperties } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js';
+    import { getAuth, signOut, updateProfile, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
+    import { getFirestore, collection, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js';
+    import { getStorage, ref as refs, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-storage.js';
+    import { getDatabase, ref, remove, set, get, onValue, onChildRemoved, child, push, onChildAdded, update, equalTo, query, limitToLast, orderByChild } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js';
+
+    const firebaseConfig = {
+       
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const anal = getAnalytics();
+    const auth = getAuth();
+    const db = getDatabase();
+    const fs = getFirestore()
+    const storage = getStorage();
+    
+    console.log('Aplication:', app,
+        'Analytics:', anal,
+        'Authentication:', auth,
+        'Database:', db,
+        'Firestore:', fs,
+        'Storage:', storage);
+
+</script>

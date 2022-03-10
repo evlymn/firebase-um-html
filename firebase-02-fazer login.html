@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .container-login {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <section id="unlogged-section">
+        <div class="container-login">
+            <div class="card text-center">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <form id="form-login">
+                        <div class="Login">
+                            <div class="mb-3">
+                                <input type="email" class="form-control" id="email" required placeholder="email" />
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" id="password" required
+                                    placeholder="senha" />
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary" id="login-button" type="submit">logar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+<script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js';
+    import { getAuth, signOut, updateProfile, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js';
+
+    const firebaseConfig = {
+       
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const form = document.querySelector('#form-login');
+
+    async function logar(e) {
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const credentials = await signInWithEmailAndPassword(auth, email, password);
+        console.log(credentials);
+    }
+
+    function aoSubmeterFormulario() {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            console.log(e)
+            logar(e);
+        });
+    }
+    aoSubmeterFormulario();
+
+</script>

@@ -1,0 +1,35 @@
+{
+  "rules": {
+    ".read": "false",
+    ".write": "false",
+    "bad_words": {
+      ".read": "true",
+      ".write": "false"
+    },
+    "apresentacao": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "by_users": {
+        "$keys": {
+          ".indexOn": ["time", "adjusted", "uid"],
+          "$postId": {
+            ".validate": "newData.child('post').exists() && newData.child('post').val().length > 2",
+            ".write": "data.child('uid').val() === auth.uid"
+          }
+        }
+      },
+      "posts": {
+        ".indexOn": ["time", "adjusted", "uid"],
+        "$postId": {
+          ".write": "data.child('uid').val() === auth.uid",
+          ".validate": "newData.child('post').exists() && newData.child('post').val().length > 2"
+        }
+      },
+      "rooms": {
+        "$roomId": {
+          ".indexOn": ["time", "uid"]
+        }
+      }
+    }
+  }
+}
